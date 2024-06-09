@@ -135,7 +135,7 @@ module RubyDocTest
               everything_passed = false
               status = ["FAIL".center(4), :red]
 
-              result_raw = t.first_failed.actual_result
+              result_raw = t.first_failed.actual_result.to_s
               got = if result_raw =~ /\n$/ && result_raw.count("\n") > 1
                       "Got: <<-__END__\n#{result_raw}__END__\n       "
                     else
